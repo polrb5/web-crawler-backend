@@ -52,26 +52,11 @@ export default [
             "object",
             "type",
           ],
-          pathGroups: [
-            {
-              pattern: "*.{css,scss}",
-              group: "sibling",
-              position: "after",
-            },
-          ],
           ["newlines-between"]: "always",
           alphabetize: {
             order: "asc",
             caseInsensitive: true,
           },
-        },
-      ],
-      "import/extensions": [
-        "error",
-        "ignorePackages",
-        {
-          js: "never",
-          ts: "never",
         },
       ],
       "prettier/prettier": [
