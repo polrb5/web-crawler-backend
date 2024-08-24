@@ -1,4 +1,4 @@
-import CrawlJobModel from "../models/CrawlJob";
+import { CrawlJobModel } from "../models";
 import { CrawlJob } from "../types";
 
 export const createCrawlJob = async (url: string): Promise<CrawlJob> => {

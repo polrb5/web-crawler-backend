@@ -1,6 +1,6 @@
 import bcrypt from "bcryptjs";
 
-import UserModel from "../models/User";
+import { UserModel } from "../models";
 import { User } from "../types";
 import { generateToken } from "../utils/generateToken";
 import { hashPassword } from "../utils/hashPassword";
