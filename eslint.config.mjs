@@ -23,6 +23,7 @@ export default [
     rules: {
       "no-underscore-dangle": "off",
       "@typescript-eslint/comma-dangle": "off",
+      "no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
       "@typescript-eslint/no-unused-vars": [
         "error",
         {
@@ -38,7 +39,7 @@ export default [
           ignoreTemplateLiterals: true,
         },
       ],
-      "max-params": ["error", 3],
+      "max-params": ["error", 4],
       "import/order": [
         "error",
         {
@@ -63,6 +64,7 @@ export default [
         "error",
         {
           endOfLine: "auto",
+          trailingComma: "es5",
         },
       ],
     },

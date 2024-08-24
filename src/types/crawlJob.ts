@@ -1,11 +1,11 @@
-import { STATUS } from "../constants/common";
+import { CRAWL_JOB_STATUS } from "../constants";
 
-export type Status = (typeof STATUS)[keyof typeof STATUS];
+export type Status = (typeof CRAWL_JOB_STATUS)[keyof typeof CRAWL_JOB_STATUS];
 
 export type CrawlJob = {
   id: string;
   url: string;
-  status: "pending" | "in-progress" | "completed";
+  status: Status;
   foundUrls: string[];
   createdAt: Date;
   updatedAt: Date;

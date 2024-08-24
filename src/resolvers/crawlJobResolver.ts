@@ -1,10 +1,11 @@
 import { createCrawlJob, getCrawlJob } from "../services";
+import { handleResolverError } from "../utils";
 
 export const crawlJobResolver = {
   createCrawlJob: async ({ url }: { url: string }) => {
-    return createCrawlJob(url);
+    return handleResolverError(() => createCrawlJob(url));
   },
   getCrawlJob: async ({ id }: { id: string }) => {
-    return getCrawlJob(id);
+    return handleResolverError(() => getCrawlJob(id));
   },
 };
