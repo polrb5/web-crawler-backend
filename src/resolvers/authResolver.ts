@@ -16,7 +16,7 @@ export const authResolver = {
     return handleResolverError(async () => {
       const user = await registerUser(email, password);
 
-      return { token: generateToken(user.id) };
+      return { token: generateToken(user._id) };
     });
   },
   login: async ({ email, password }: { email: string; password: string }) => {

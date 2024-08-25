@@ -1,9 +1,17 @@
 export const ERROR_MESSAGES = {
   AUTHENTICATION_FAILED: "Authentication failed",
-  CRAWL_JOB_NOT_FOUND: (jobId: string) => `CrawlJob with ID ${jobId} not found`,
+  CRAWL_JOB_NOT_FOUND: (id: string) => `Crawl job with ID ${id} not found`,
+  EMAIL_REQUIRED: "Email is required",
+  INVALID_EMAIL_OR_PASSWORD: "Invalid email or password",
+  INVALID_EMAIL: "Invalid email address",
+  INVALID_URL: "Invalid URL",
+  PASSWORD_REQUIRED: "Password is required",
+  PASSWORD_TOO_SHORT: "Password must be at least 8 characters long",
   RESOURCE_NOT_FOUND: "Resource not found",
   UNEXPECTED_ERROR: "An unexpected error occurred. Please try again later.",
   UNKNOWN_ERROR: "An unknown error occurred",
   URL_MUST_BE_PROVIDED: "URL must be provided",
+  URL_REQUIRED: "URL is required",
+  USER_ALREADY_EXISTS: "User already exists",
   VALIDATION_ERROR: "Validation error",
-} as const;
+};
