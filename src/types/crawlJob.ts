@@ -1,4 +1,4 @@
-import { CRAWL_JOB_STATUS } from "../constants";
+import { CRAWL_JOB_STATUS } from '../constants';
 
 export type Status = (typeof CRAWL_JOB_STATUS)[keyof typeof CRAWL_JOB_STATUS];
 

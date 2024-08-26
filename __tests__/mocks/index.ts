@@ -1,2 +1,2 @@
-export * from "./authMock";
-export * from "./crawlJobMock";
+export * from './authMock';
+export * from './crawlJobMock';

@@ -1,6 +1,6 @@
-import { GraphQLError } from "graphql";
+import { GraphQLError } from 'graphql';
 
-import { ERROR_MESSAGES } from "../constants";
+import { ERROR_MESSAGES } from '../constants';
 
 export class AppError extends Error {
   public readonly statusCode: number;
@@ -9,7 +9,7 @@ export class AppError extends Error {
   constructor(
     message: string,
     statusCode: number,
-    isOperational: boolean = true
+    isOperational: boolean = true,
   ) {
     super(message);
     this.statusCode = statusCode;
@@ -31,8 +31,14 @@ export class NotFoundError extends AppError {
   }
 }
 
+export class CrawlJobError extends AppError {
+  constructor(message: string = ERROR_MESSAGES.CRAWL_JOB_ERROR) {
+    super(message, 500);
+  }
+}
+
 export const formatGraphQLError = (
-  error: GraphQLError | Error
+  error: GraphQLError | Error,
 ): GraphQLError | Error => {
   if (error instanceof GraphQLError) {
     const originalError = error.originalError as AppError;
@@ -47,7 +53,7 @@ export const formatGraphQLError = (
         ...error.extensions,
         code: originalError?.statusCode || 500,
         exception: {
-          stacktrace: error.stack ? error.stack.split("\n") : null,
+          stacktrace: error.stack ? error.stack.split('\n') : null,
         },
       },
     });
@@ -57,7 +63,7 @@ export const formatGraphQLError = (
 };
 
 export const handleResolverError = async <T>(
-  resolverFunc: () => Promise<T>
+  resolverFunc: () => Promise<T>,
 ): Promise<T> => {
   try {
     return await resolverFunc();

@@ -1,5 +1,5 @@
 export const STATUS = {
-  COMPLETED: "completed",
-  ERROR: "error",
-  PENDING: "pending",
+  COMPLETED: 'completed',
+  ERROR: 'error',
+  PENDING: 'pending',
 } as const;

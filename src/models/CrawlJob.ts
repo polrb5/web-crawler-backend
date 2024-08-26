@@ -1,7 +1,7 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
-import { STATUS } from "../constants";
-import { CrawlJob } from "../types";
+import { STATUS } from '../constants';
+import { CrawlJob } from '../types';
 
 const crawlJobSchema = new mongoose.Schema<CrawlJob>({
   url: { type: String, required: true },
@@ -11,4 +11,4 @@ const crawlJobSchema = new mongoose.Schema<CrawlJob>({
   updatedAt: { type: Date, default: Date.now },
 });
 
-export default mongoose.model<CrawlJob>("CrawlJob", crawlJobSchema);
+export default mongoose.model<CrawlJob>('CrawlJob', crawlJobSchema);

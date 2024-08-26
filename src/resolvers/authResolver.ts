@@ -1,9 +1,9 @@
-import { registerUser, loginUser } from "../services";
+import { registerUser, loginUser } from '../services';
 import {
   AuthenticationError,
   generateToken,
   handleResolverError,
-} from "../utils";
+} from '../utils';
 
 export const authResolver = {
   register: async ({
@@ -15,7 +15,6 @@ export const authResolver = {
   }) => {
     return handleResolverError(async () => {
       const user = await registerUser(email, password);
-
       return { token: generateToken(user._id) };
     });
   },
@@ -23,7 +22,7 @@ export const authResolver = {
     return handleResolverError(async () => {
       const token = await loginUser(email, password);
 
-      if (!token) throw new AuthenticationError("Invalid credentials");
+      if (!token) throw new AuthenticationError('Invalid credentials');
 
       return { token };
     });

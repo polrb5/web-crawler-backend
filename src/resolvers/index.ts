@@ -1,2 +1,2 @@
-export * from "./authResolver";
-export * from "./crawlJobResolver";
+export * from './authResolver';
+export * from './crawlJobResolver';

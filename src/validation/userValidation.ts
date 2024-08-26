@@ -1,6 +1,6 @@
-import * as yup from "yup";
+import * as yup from 'yup';
 
-import { ERROR_MESSAGES } from "../constants";
+import { ERROR_MESSAGES } from '../constants';
 
 export const userSchema = yup.object().shape({
   email: yup

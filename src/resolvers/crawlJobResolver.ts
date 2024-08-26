@@ -1,5 +1,5 @@
-import { createCrawlJob, getCrawlJob } from "../services";
-import { handleResolverError } from "../utils";
+import { createCrawlJob, getCrawlJob } from '../services';
+import { handleResolverError } from '../utils';
 
 export const crawlJobResolver = {
   createCrawlJob: async ({ url }: { url: string }) => {
